@@ -8,17 +8,18 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           {/* Edit <code>src/App.js</code> and save to reload. */}
-          Desenvolvido por Luciano Piantavigna Rosa e Juliana Busatto 
-          para a disciplina de Sistemas Distribuídos da FAESA.
+          Trabalho desenvolvido por <b><i>Luciano Piantavigna Rosa</i></b> e <b><i>Juliana Busatto</i></b>
+          <br></br> 
+          para a disciplina de <b><u>Sistemas Distribuídos</u></b> da <b><u>FAESA</u></b>.
         </p>
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
