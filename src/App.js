@@ -7,7 +7,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {/* Edit <code>src/App.js</code> and save to reload. */}
+          Desenvolvido por Luciano Piantavigna Rosa e Juliana Busatto 
+          para a disciplina de Sistemas Distribuídos da FAESA.
         </p>
         <a
           className="App-link"
