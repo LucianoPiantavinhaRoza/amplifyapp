@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-// import logo from './logo.svg';
+import './App.css';
+import logo from './logo.svg';
 import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
@@ -55,62 +56,75 @@ function App() {
   }
   
   return (
+
     <div className="App">
 
-    <h1>My Notes App</h1>
+    <img 
+    src={logo} 
+    className="App-logo" 
+    alt="logo" 
+    />
 
-    <input
+    <h1>Gerenciador de Anotações</h1>
+
+    <section className="App-form">
+      <input
+      className="Form-input"
       onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-      placeholder="Note name"
+      placeholder="Título da Nota"
       value={formData.name}
-    />
+      />
 
-    <input
+      <input
+      className="Form-input"
       onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-      placeholder="Note description"
+      placeholder="Descrição da Nota"
       value={formData.description}
-    />
+      />
 
-    <input
+      <input
+      className="Form-input"
       type="file"
       onChange={onChange}
-    />
+      />
 
-    <button onClick={createNote}>Create Note</button>
+      <button type="submit" onClick={createNote}>Criar Nota</button>
+    </section>
 
-    <div style={{marginBottom: 30}}>
-      {
-        notes.map(note => (
-          <div key={note.id || note.name}>
-            <h2>{note.name}</h2>
-            <p>{note.description}</p>
-            <button onClick={() => deleteNote(note)}>Delete note</button>
-            {
-              note.image && <img src={note.image} style={{width: 400}} />
-            }
-          </div>
-        ))
-      }
-    </div>
+    <section className="App-list">
+      <div style={{marginBottom: 30}}>
+        {
+          notes.map(note => (
+            <div className="List-body" key={note.id || note.name}>
+              <h2 className="List-titulo">{note.name}</h2>
+              <p className="List-descricao">{note.description}</p>
+              {
+                note.image && <img
+                              className="List-imagem"  
+                              src={note.image} 
+                              alt="Imagem da nota." 
+                              style={{width: 150, padding: 10, margin: 10}} 
+                              />
+              }
+              <button 
+              type="button" 
+              className="List-button" 
+              onClick={() => deleteNote(note)}>Excluir Nota
+              </button>
+            </div>
+          ))
+        }
+      </div>
+    </section>
 
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          Trabalho desenvolvido por <b><i>Luciano Piantavigna Rosa</i></b> e <b><i>Juliana Larissa Costa Busato</i></b>
-          <br></br> 
-          para a disciplina de <b><u>Sistemas Distribuídos</u></b> da <b><u>FAESA</u></b>.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      <AmplifySignOut />
+    <AmplifySignOut buttonText="Sair do Sistema"/>
+
+    <footer>
+      <p>
+        Trabalho desenvolvido por <b><i>Luciano Piantavigna Rosa</i></b> e <b><i>Juliana Larissa Costa Busato</i></b> para a disciplina de <b><u>Sistemas Distribuídos</u></b> da <b><u>FAESA</u></b>.
+      </p>
+    </footer>
+
     </div>
   );
 }

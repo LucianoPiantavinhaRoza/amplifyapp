@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -11,21 +11,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +21,84 @@
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  color: white;
+}
+
+.App-form {
+  position: relative;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 20px;
+  text-align: left;
+  display: inline-flex;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px black;
+  box-sizing: border-box;
+  min-width: 10px;
+}
+
+.Form-input {
+  margin: 10px;
+  padding: 5px;
+}
+
+.App-list {
+  position: relative;
+  width: 63%;
+  margin-bottom: 10px;
+  background-color: #282c34;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  box-sizing: border-box;
+  min-width: 10px;
+}
+
+.List-body {
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  align-items: center;
+  box-shadow: 10px 10px 10px black;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.List-titulo,
+.List-descricao,
+.List-button {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.List-imagem {
+  width: 30%;
+  border: 1px solid black;
+}
+p {
+  color: white;
+}
+
+.hydrated {
+  background-color: #282c34;
+}
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+/* .App-link {
+  color: #61dafb;
+} */
